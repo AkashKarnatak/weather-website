@@ -9,6 +9,7 @@ function forecast(lat, lon, loc, callback){
         } else if (!response.body.current){
             callback('Unable to find location. Try another search', undefined);
         } else {
+            console.log(response.body);
             callback(undefined, `The temperature outside in ${loc} is ${response.body.current.temp}. Its ${response.body.current.weather[0].description}y outside.`);
         }
     });
